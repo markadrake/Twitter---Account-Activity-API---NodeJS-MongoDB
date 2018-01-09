@@ -1,0 +1,26 @@
+{
+  "name": "twitter-api-aa-with-nodejs",
+  "version": "0.1.0",
+  "description": "How to use Twitter's Account Activity API in NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markadrake/twitter-api-aa-with-nodejs.git"
+  },
+  "keywords": [
+    "twitter",
+    "account",
+    "activity",
+    "api",
+    "nodejs"
+  ],
+  "author": "Mark Drake",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markadrake/twitter-api-aa-with-nodejs/issues"
+  },
+  "homepage": "https://github.com/markadrake/twitter-api-aa-with-nodejs#readme"
+}

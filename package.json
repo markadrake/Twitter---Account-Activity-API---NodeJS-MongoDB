@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/markadrake/twitter-api-aa-with-nodejs#readme",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "express": "^4.16.2"
   }
 }

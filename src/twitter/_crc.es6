@@ -6,15 +6,31 @@ const crypto = require("crypto");
 
 class ChallengeResponseCheck {
 
+	constructor() {
+		this.debug = true;
+	}
+
+	log(message) {
+		if(!this.debug) return;
+
+		if (typeof message === typeof "")
+			console.log(`ChallengeResponseCheck: ${message}`);
+		else {
+			console.log(`ChallengeResponseCheck:`);
+			console.log(`${message}`);
+		}
+	}
+
 	response(crc_token) {
+		this.log(`response() called.`);
+
 		if (!crc_token) return;
 
-		const key = "41fzwbIrxHBmcOo57hYsnEVKYdp3iyA3NZsW1m1ytY53aGQeug",
-			hmac = crypto.hmac("sha265", key);
-
+		const hmac = crypto.createHmac("sha256", process.env.TWITTER_APP_CONSUMER_SECRET);
 		hmac.update(crc_token);
 
-		const response_token = hmac.digest();
+		const response_token = hmac.digest("hex");
+		hmac.end();
 
 		return {
 			response_token
@@ -22,9 +38,11 @@ class ChallengeResponseCheck {
 	}
 
 	validateRequest(request) {
-		// not implemented yet
+		this.log(`validateRequest() is not implemented yet.`);
+
+		return true;
 	}
 
 }
 
-module.exports = ChallengeResponseCheck;
+module.exports = new ChallengeResponseCheck();
